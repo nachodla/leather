@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet"> 
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,161 +21,106 @@
             </div>
         </div>
         <div id="inicio">
-            <!-- Carrusel 1 -->
-            <div class="carousel-container">
-                <div class="flechita flechita-left" onclick="cambiarImagen('prev', 0)">&#8592;</div>
-                <div id="carousel1" class="carousel">
-                    <div class="carousel-item" style="background-image: url('/leather/front/assets/fotosChalecos/10.jpg');"></div>
-                    <div class="carousel-item" style="background-image: url('/leather/front/assets/fotosChalecos/11.jpg');"></div>
-                    <div class="carousel-item" style="background-image: url('/leather/front/assets/fotosChalecos/10.jpg');"></div>
-                </div>
-                <div class="flechita flechita-right" onclick="cambiarImagen('next', 0)">&#8594;</div>
-            </div>
-
-            <!-- Carrusel 2 -->
-            <div class="carousel-container">
-                <div class="flechita flechita-left" onclick="cambiarImagen('prev', 1)">&#8592;</div>
-                <div id="carousel2" class="carousel">
-                    <div class="carousel-item" style="background-image: url('/leather/front/assets/fotosChalecos/21.jpg');"></div>
-                    <div class="carousel-item" style="background-image: url('/leather/front/assets/fotosChalecos/20.jpg');"></div>
-                    <div class="carousel-item" style="background-image: url('/leather/front/assets/fotosChalecos/21.jpg');"></div>
-                </div>
-                <div class="flechita flechita-right" onclick="cambiarImagen('next', 1)">&#8594;</div>
-            </div>
-
+            <div id="art1">Kylian Mbappe</div>
+            <div id="art2">lamine Yamal</div>
+            <div id="art3">erling haaland</div>
+            <div id="art4">rodrygo</div>
+            <div id="art5">vini</div>
         </div>
     </div>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            width: 100%;
-            height: 100%;
-        }
-
-        #cuerpo {
-            display: grid;
-            grid-template-areas:
-                'nav-bar nav-bar'
-                'inicio inicio';
-            grid-template-rows: 2fr 12fr;
-            width: 100vw;
-            height: 100vh;
-            background-color: lightblue;
-        }
-
-        #navBar {
-            display: flex;
-            grid-area: nav-bar;
-            background: linear-gradient(to bottom, #CCBC9C, #E7E4D6);
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-
-        #boton {
-            font-size: 30px;
-            cursor: pointer;
-            padding: 10px;
-            margin-right: 20px;
-        }
-
-        #titulo {
-            font-family: "Tangerine", serif;
-            font-weight: 700;
-            font-style: italic;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 150px;
-            font-size: 15vw;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            color: #6E3504;
-            -webkit-text-stroke: 0.7px black;
-            flex-grow: 1;
-        }
-
-        #inicio {
-            grid-area: inicio;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #E7E4D6;
-        }
-
-        .carousel-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .carousel {
-            display: flex;
-            overflow: hidden;
-            width: 250px;
-            height: 250px;
-        }
-
-        .carousel-item {
-            min-width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.5s ease;
-        }
-
-        .flechita {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 2rem;
-            color: #fff;
-            cursor: pointer;
-            z-index: 10;
-            padding: 10px;
-        }
-
-        .flechita-left {
-            left: -40px;
-        }
-
-        .flechita-right {
-            right: -40px;
-        }
-    </style>
-
-    <script>
-        let currentImageIndex = [0, 0]; // Array para almacenar los índices de las imágenes actuales por carrusel
-
-// Función para cambiar las imágenes en el carrusel
-function cambiarImagen(direction, carouselIndex) {
-    const totalImages = 3; // Total de imágenes por carrusel (ajustar según el número de imágenes por carrusel)
-    const carousel = document.getElementById(`carousel${carouselIndex}`);
-
-    if (!carousel) {
-        console.error("Carrusel no encontrado!");
-        return; // Detenemos la ejecución si no encontramos el carrusel
-    }
-
-    // Cambiar el índice dependiendo de la dirección
-    if (direction === 'next') {
-        currentImageIndex[carouselIndex] = (currentImageIndex[carouselIndex] + 1) % totalImages;
-    } else {
-        currentImageIndex[carouselIndex] = (currentImageIndex[carouselIndex] - 1 + totalImages) % totalImages;
-    }
-
-    // Mover el carrusel a la imagen correspondiente
-    carousel.style.transform = `translateX(-${currentImageIndex[carouselIndex] * 100}%)`;
-}
-
-    </script>
 </body>
 </html>
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Esto asegura que el padding y el borde no afecten el ancho y alto */
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+
+#cuerpo {
+    display: grid;
+    grid-template-areas: 
+        'nav-bar nav-bar'
+        'inicio inicio';
+    grid-template-rows: 2fr 12fr; /* El navbar ocupa 1 parte, el contenido 9 */
+    width: 100vw;
+    height: 100vh; /* Usamos 100vh para que ocupe toda la pantalla */
+    background-color: lightblue;
+}
+
+#navBar {
+    display: flex;
+    grid-area: nav-bar;
+    background: linear-gradient(to bottom, #CCBC9C, #E7E4D6);
+    align-items: center; /* Centrado vertical de los elementos en el contenedor */
+    justify-content: center; /* Centrado horizontal de todo el contenido */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+#boton {
+    font-size: 30px; /* Tamaño del ícono */
+    cursor: pointer; /* Cambio de cursor al pasar por encima */
+    padding: 10px;
+    margin-right: 20px; /* Espacio entre el ícono y el título */
+}
+
+#titulo {
+    font-family: "Tangerine", serif;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Centrado vertical dentro de su contenedor */
+    justify-content: center; /* Centrado horizontal dentro de su contenedor */
+    height: 150px; 
+    font-size: 15vw;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: #6E3504;
+    -webkit-text-stroke: 0.7px black;
+    flex-grow: 1;
+    margin-right: 70px;
+}
+
+#inicio {
+    grid-area: inicio;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E7E4D6;
+    flex-wrap: wrap;
+    
+}
+#art1, #art2, #art3, #art4, #art5 {
+    width: 250px; /* Tamaño fijo */
+    height: 250px; /* Tamaño fijo */
+    background-size: cover;
+    background-position: center;
+    padding: 1rem;
+    margin: 30px;
+    border-radius: 38px;
+    position: relative;
+    transition: transform 0.3s ease; /* Agregar transición suave al cambiar de imagen */
+}
+#art1 {
+    background-image: url('/leather/front/assets/fotosChalecos/10.jpg');
+}
+#art2 {
+    background-image: url('/leather/front/assets/fotosChalecos/20.jpg');
+}
+#art3 {
+    background-image: url('/leather/front/assets/fotosChalecos/IMG-20250220-WA0019.jpg');
+}
+#art4 {
+    background-image: url('/leather/front/assets/fotosChalecos/IMG-20250220-WA0020.jpg');
+}
+#art5 {
+    background-image: url('path-to-image5.jpg');
+}
+
+</style>
