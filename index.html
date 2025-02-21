@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet"> 
@@ -25,19 +24,19 @@
         <!-- Menú lateral -->
         <div id="menuLateral">
             <ul id="bajar">
-                
-                <div href="https://wa.me/59891949678" target="_blank" class="whatsapp-btn">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="icono">
-                    Contacto
+                <div class="botones1">
+                    <a href="https://wa.me/59891949678" target="_blank" class="whatsapp-btn">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="icono">
+                        Contacto
+                    </a>
                 </div>
                 
-                
-                
-                    <div href="tel:+59891949678" class="llamar-btn">
+                <div class="botones2">
+                    <a href="tel:+59891949678" class="llamar-btn">
                         <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Teléfono" class="icono">
                         Llamar
-                    </div>
-                
+                    </a>
+                </div>
                 <li>ANDREA AQUINO ESTAFADORA</li>
             </ul>
         </div>
@@ -54,9 +53,9 @@
 
 <style>
     * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Esto asegura que el padding y el borde no afecten el ancho y alto */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     html, body {
@@ -64,171 +63,176 @@
         height: 100%;
     }
 
-#cuerpo {
-    display: grid;
-    grid-template-areas: 
-        'nav-bar nav-bar'
-        'inicio inicio';
-    grid-template-rows: 2fr 12fr; /* El navbar ocupa 1 parte, el contenido 9 */
-    width: 100vw;
-    height: 100vh; /* Usamos 100vh para que ocupe toda la pantalla */
-    background-color: #E7E4D6;
-}
+    #cuerpo {
+        display: grid;
+        grid-template-areas: 
+            'nav-bar nav-bar'
+            'inicio inicio';
+        grid-template-rows: 2fr 12fr; 
+        width: 100vw;
+        height: 100vh;
+        background-color: #E7E4D6;
+    }
 
-#navBar {
-    display: flex;
-    grid-area: nav-bar;
-    background: linear-gradient(to bottom, #CCBC9C, #E7E4D6);
-    align-items: center; /* Centrado vertical de los elementos en el contenedor */
-    justify-content: center; /* Centrado horizontal de todo el contenido */
-    width: 100%; /* Asegura que ocupe todo el ancho disponible */
-}
+    #navBar {
+        display: flex;
+        grid-area: nav-bar;
+        background: linear-gradient(to bottom, #CCBC9C, #E7E4D6);
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 
-#boton {
-    font-size: 30px; /* Tamaño del ícono */
-    cursor: pointer; /* Cambio de cursor al pasar por encima */
-    padding: 10px;
-    margin-right: 20px; /* Espacio entre el ícono y el título */
-    z-index: 1001; /* Mayor que el menú lateral para estar por encima */
-    
-}
+    #boton {
+        font-size: 30px;
+        cursor: pointer;
+        padding: 10px;
+        margin-right: 20px;
+        z-index: 1001;
+    }
 
-#titulo {
-    font-family: "Gwendolyn", serif;
-  font-weight: 700;
-  font-style: normal;
-    text-align: center;
-    display: flex;
-    align-items: center; /* Centrado vertical dentro de su contenedor */
-    justify-content: center; /* Centrado horizontal dentro de su contenedor */
-    height: 150px; 
-    font-size: 13vw;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    color: #6E3504;
-    -webkit-text-stroke: 0.7px black;
-    flex-grow: 1;
-    margin-right: 70px;
-}
+    #titulo {
+        font-family: "Gwendolyn", serif;
+        font-weight: 700;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+        font-size: 13vw;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        color: #6E3504;
+        -webkit-text-stroke: 0.7px black;
+        flex-grow: 1;
+        margin-right: 70px;
+    }
 
-#inicio {
-    grid-area: inicio;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #E7E4D6;
-    flex-wrap: wrap;
-    
-}
-#art1, #art2, #art3, #art4, #art5 {
-    width: 250px; /* Tamaño fijo */
-    height: 250px; /* Tamaño fijo */
-    background-size: cover;
-    background-position: center;
-    padding: 1rem;
-    margin: 30px;
-    border-radius: 38px;
-    position: relative;
-    transition: transform 0.3s ease; /* Agregar transición suave al cambiar de imagen */
-}
-#art1 {
-    background-image: url('/leather/front/assets/fotosChalecos/10.jpg');
-}
-#art2 {
-    background-image: url('/leather/front/assets/fotosChalecos/20.jpg');
-}
-#art3 {
-    background-image: url('/leather/front/assets/fotosChalecos/IMG-20250220-WA0019.jpg');
-}
-#art4 {
-    background-image: url('/leather/front/assets/fotosChalecos/IMG-20250220-WA0020.jpg');
-}
-#art5 {
-    background-image: url('path-to-image5.jpg');
-}
-/* Menú lateral oculto por defecto */
-#menuLateral {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Se oculta fuera de la pantalla */
-    width: 250px;
-    height: 100vh;
-    background: rgba(51, 51, 51, 0.9);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    transition: left 0.3s ease;
-    z-index: 1000; /* Un poco menor que el botón */
-}
+    #inicio {
+        grid-area: inicio;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #E7E4D6;
+        flex-wrap: wrap;
+    }
 
+    #art1, #art2, #art3, #art4, #art5 {
+        width: 250px;
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+        padding: 1rem;
+        margin: 30px;
+        border-radius: 38px;
+        position: relative;
+        transition: transform 0.3s ease;
+    }
 
-/* Enlace dentro del menú */
-#menuLateral a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 15px 0;
-    display: block;
-    transition: 0.3s;
-}
+    #art1 {
+        background-image: url('/leather/front/assets/fotosChalecos/10.jpg');
+    }
+    #art2 {
+        background-image: url('/leather/front/assets/fotosChalecos/20.jpg');
+    }
+    #art3 {
+        background-image: url('/leather/front/assets/fotosChalecos/IMG-20250220-WA0019.jpg');
+    }
+    #art4 {
+        background-image: url('/leather/front/assets/fotosChalecos/IMG-20250220-WA0020.jpg');
+    }
+    #art5 {
+        background-image: url('path-to-image5.jpg');
+    }
 
-#menuLateral a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    
-}
-#bajar{
-    margin-top: 40%;
-    
-}
-#menuLateral ul li a {
-    font-family: "Tangerine", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 30px; /* Ajusta el tamaño si es necesario */
-    font-weight: bold;  /* Hace el texto más grueso */
-    color: rgb(241, 241, 241);  /* Ajusta el color del texto */
-    text-decoration: none;  /* Quita el subrayado de los enlaces */
-    display: flex;
-    align-items: center;  /* Alinea el texto con el ícono */
-}
-.whatsapp-btn, .llamar-btn {
-    display: flex;
-    align-items: center;  /* Centra verticalmente */
-    justify-content: center;  /* Centra horizontalmente */
-    background-color:#a66b31;
-    border-radius: 20px;
-    padding: 10px 15px;  /* Ajusta el tamaño del botón */
-    text-decoration: none;  /* Quita el subrayado del enlace */
-    color: white;  /* Cambia el color del texto */
-   
-    gap: 8px;  /* Espacio entre el ícono y el texto */
-    margin-top: 10px;
-}
+    /* Menú lateral */
+    #menuLateral {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        background: rgba(51, 51, 51, 0.9);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
 
-.icono {
-    width: 20px;  /* Tamaño del ícono */
-    height: 20px;
-}
+    /* Enlace dentro del menú */
+    #menuLateral a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 15px 0;
+        display: block;
+        transition: 0.3s;
+    }
 
+    #menuLateral a:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
 
-/* Clase para mostrar el menú */
-.menu-abierto {
-    left: 0 !important;
-}
-.oculto {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-.icono {
-    width: 20px;  /* Ajusta el tamaño del ícono */
-    height: 20px;
-    margin-right: 10px;  /* Espacio entre el ícono y el texto */
-    vertical-align: middle;  /* Alineación vertical */
-}
+    #bajar{
+        margin-top: 40%;
+    }
 
+    #menuLateral ul li a {
+        font-family: "Tangerine", serif;
+        font-weight: 400;
+        font-size: 30px;
+        font-weight: bold;
+        color: rgb(241, 241, 241);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+    .botones1, .botones2{
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;    }
+    /* Botones dentro del menu lateral */
+    .whatsapp-btn, .llamar-btn {
+        
+        background-color: #a66b31 !important;
+        border-radius: 20px !important;
+        padding: 10px 60px !important;  /* Ajuste más pequeño en el padding */
+        text-decoration: none !important;
+        color: white !important;
+        font-family: "Tangerine", serif !important;
+        font-weight: 400 !important;
+        font-style: normal !important;
+        font-size: 25px !important; /* Reducido aún más el tamaño del texto */
+        font-weight: bold !important;
+        gap: 8px !important;
+        margin-top: 10px !important;
+        width: auto !important;
+        box-sizing: border-box !important; /* Asegura que el padding no afecte el tamaño */
+    }
 
+    .whatsapp-btn a, .llamar-btn a {
+        color: white !important;
+    }
+
+    .icono {
+        width: 16px !important;  /* Reducción del tamaño del ícono */
+        height: 16px !important;  /* Reducción del tamaño del ícono */
+        margin-right: 8px !important;  /* Espacio entre el ícono y el texto */
+    }
+
+    /* Clase para mostrar el menú */
+    .menu-abierto {
+        left: 0 !important;
+    }
+
+    .oculto {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
 </style>
+
 <script>
     function toggleMenu() {
         let menu = document.getElementById("menuLateral");
@@ -242,6 +246,4 @@
             inicio.classList.add("oculto"); // Ocultar fotos cuando se abre
         }
     }
-    </script>
-    
-    
+</script>
