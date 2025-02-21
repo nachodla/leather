@@ -22,12 +22,29 @@
                 AA Leather
             </div>
         </div>
+        <!-- Menú lateral -->
+        <div id="menuLateral">
+            <ul id="bajar">
+                <li>
+                    <a href="https://wa.me/59891949678" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="icono">
+                        Contacto
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:+59891949678">
+                        <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Teléfono" class="icono">
+                        Llamar
+                    </a>
+                </li>
+            </ul>
+        </div>
         <div id="inicio">
-            <div id="art1">Kylian Mbappe</div>
-            <div id="art2">lamine Yamal</div>
-            <div id="art3">erling haaland</div>
-            <div id="art4">rodrygo</div>
-            <div id="art5">vini</div>
+            <div id="art1"></div>
+            <div id="art2"></div>
+            <div id="art3"></div>
+            <div id="art4"></div>
+            <div id="art5"></div>
         </div>
     </div>
 </body>
@@ -53,7 +70,7 @@
     grid-template-rows: 2fr 12fr; /* El navbar ocupa 1 parte, el contenido 9 */
     width: 100vw;
     height: 100vh; /* Usamos 100vh para que ocupe toda la pantalla */
-    background-color: lightblue;
+    background-color: #E7E4D6;
 }
 
 #navBar {
@@ -70,6 +87,8 @@
     cursor: pointer; /* Cambio de cursor al pasar por encima */
     padding: 10px;
     margin-right: 20px; /* Espacio entre el ícono y el título */
+    z-index: 1001; /* Mayor que el menú lateral para estar por encima */
+    
 }
 
 #titulo {
@@ -124,5 +143,71 @@
 #art5 {
     background-image: url('path-to-image5.jpg');
 }
+/* Menú lateral oculto por defecto */
+#menuLateral {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Se oculta fuera de la pantalla */
+    width: 250px;
+    height: 100vh;
+    background: rgba(51, 51, 51, 0.9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 1000; /* Un poco menor que el botón */
+}
+
+
+/* Enlace dentro del menú */
+#menuLateral a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 15px 0;
+    display: block;
+    transition: 0.3s;
+}
+
+#menuLateral a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+#bajar{
+    margin-top: 40%;
+}
+
+/* Clase para mostrar el menú */
+.menu-abierto {
+    left: 0 !important;
+}
+.oculto {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.icono {
+    width: 20px;  /* Ajusta el tamaño del ícono */
+    height: 20px;
+    margin-right: 10px;  /* Espacio entre el ícono y el texto */
+    vertical-align: middle;  /* Alineación vertical */
+}
+
 
 </style>
+<script>
+    function toggleMenu() {
+        let menu = document.getElementById("menuLateral");
+        let inicio = document.getElementById("inicio"); // Sección con las fotos
+    
+        if (menu.classList.contains("menu-abierto")) {
+            menu.classList.remove("menu-abierto");
+            inicio.classList.remove("oculto"); // Mostrar fotos cuando se cierra
+        } else {
+            menu.classList.add("menu-abierto");
+            inicio.classList.add("oculto"); // Ocultar fotos cuando se abre
+        }
+    }
+    </script>
+    
+    
