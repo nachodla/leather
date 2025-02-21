@@ -25,18 +25,19 @@
         <!-- Menú lateral -->
         <div id="menuLateral">
             <ul id="bajar">
-                <li>
-                    <a href="https://wa.me/59891949678" target="_blank">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="icono">
-                        Contacto
-                    </a>
-                </li>
-                <li>
-                    <a href="tel:+59891949678">
+                
+                <div href="https://wa.me/59891949678" target="_blank" class="whatsapp-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="icono">
+                    Contacto
+                </div>
+                
+                
+                
+                    <div href="tel:+59891949678" class="llamar-btn">
                         <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Teléfono" class="icono">
                         Llamar
-                    </a>
-                </li>
+                    </div>
+                
                 <li>ANDREA AQUINO ESTAFADORA</li>
             </ul>
         </div>
@@ -173,10 +174,42 @@
 
 #menuLateral a:hover {
     background: rgba(255, 255, 255, 0.2);
+    
 }
 #bajar{
     margin-top: 40%;
+    
 }
+#menuLateral ul li a {
+    font-family: "Tangerine", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px; /* Ajusta el tamaño si es necesario */
+    font-weight: bold;  /* Hace el texto más grueso */
+    color: rgb(241, 241, 241);  /* Ajusta el color del texto */
+    text-decoration: none;  /* Quita el subrayado de los enlaces */
+    display: flex;
+    align-items: center;  /* Alinea el texto con el ícono */
+}
+.whatsapp-btn, .llamar-btn {
+    display: flex;
+    align-items: center;  /* Centra verticalmente */
+    justify-content: center;  /* Centra horizontalmente */
+    background-color:#a66b31;
+    border-radius: 20px;
+    padding: 10px 15px;  /* Ajusta el tamaño del botón */
+    text-decoration: none;  /* Quita el subrayado del enlace */
+    color: white;  /* Cambia el color del texto */
+   
+    gap: 8px;  /* Espacio entre el ícono y el texto */
+    margin-top: 10px;
+}
+
+.icono {
+    width: 20px;  /* Tamaño del ícono */
+    height: 20px;
+}
+
 
 /* Clase para mostrar el menú */
 .menu-abierto {
